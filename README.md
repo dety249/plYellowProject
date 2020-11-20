@@ -1,5 +1,5 @@
 # plYellowProject
-## The project is to create a library systematically using Python Programming Language. ##
+## The project is to create a Library System using Python Programming Language. ##
 
 ### Features: ###
   * Book Addition
