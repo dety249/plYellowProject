@@ -1,6 +1,12 @@
 # plYellowProject
 ## The project is to create a Library System using Python Programming Language. ##
 
+### Contributors: ###
+  * Philip Ponciano
+  * Elwin Serrano
+  * Francis Tale
+  * Dominic Edward Ty
+  
 ### Features: ###
   * Book Addition
   * Search for Book Availability
