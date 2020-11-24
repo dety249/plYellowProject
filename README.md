@@ -16,4 +16,5 @@
   
  [Trello Board](https://trello.com/b/AYQO1KUk/plyellow/ "Trello Board")
  
+ ### IPO Chart: ###
  ![picture alt](https://github.com/Fraxinus001/plYellowProject/blob/main/IPO%20chart.png "IPO Chart")
