@@ -15,3 +15,5 @@
   * Record and Checking of Return Time
   
  [Trello Board](https://trello.com/b/AYQO1KUk/plyellow/ "Trello Board")
+ 
+ ![picture alt](https://github.com/Fraxinus001/plYellowProject/blob/main/IPO%20chart.png "IPO Chart")
