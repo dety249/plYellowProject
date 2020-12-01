@@ -1,9 +1,9 @@
 import datetime
 
 d1 = {"red": "taylor swift", "attack on tale": "francis", "the life of ty": "boss philip"}  # author
-d2 = {"red": "June 21,2001", "attack on dolomite": "November 28,2021",
+d2 = {"red": "June 21,2001", "attack on tale": "November 28,2021",
       "the life of ty": "December 1,2001"}  # published date
-d3 = {"red": 1, "attack on dolomite": 13, "the life of ty": 200}  # numbers of available books
+d3 = {"red": 1, "attack on tale": 13, "the life of ty": 200}  # numbers of available books
 d4 = {"red": "Horror", "attack on tale": "Anime", "the life of ty": "Bibliography"}
 
 print("\nWelcome To Library")
@@ -18,13 +18,13 @@ def main():
     while True:
         x = str(input("Please input the course of action to do: "))
         if x == "display":
-            q = int(input("how many: "))
-            for w in range(0,q):
-            # input for the key
-                i = str(input("Please specify the book title: "))
-            # display output
-                print(f"The book '{i}' by {d1[i]} is published in {d2[i]}, located at {d4[i]} section, this book still has {d3[i]} "
-                      f"available in the library.")
+                q = int(input("how many: "))
+                for w in range(0, q):
+                    # input for the key
+                    i = str(input("Please specify the book title: "))
+                    # display output
+                    print(f"The book '{i}' by {d1[i]} is published in {d2[i]}, located at {d4[i]} section, this book still has {d3[i]} "
+                          f"available in the library.")
         elif x == "add":
             print("Add new Book. Please specify the necessary information on the input to be followed: ")
             a = str(input("Book title: "))
@@ -44,7 +44,7 @@ def main():
             for key in e:
                 print(f"The book '{key}' by {e[key]} is now added to the library.")
         elif x == "change":
-            print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, 'S' for specifying the location, "
+            print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, 'L' for specifying the location, "
                   "and 'N' for number of books.")
             q = str(input("What would you like to change? "))
             if q == "B":
@@ -78,7 +78,7 @@ def main():
                 # change the value of the specific key
                 d3[c] = int(input("Number of books: "))
                 print("The book '{}' now has {} books available.".format(c, d3[c]))
-            elif q == "S":
+            elif q == "L":
                 c = str(input("Please specify the book you want to change: "))
                 # to check if input is in dictionary
                 d4[c] = d4[c]
@@ -118,9 +118,11 @@ def main():
         else:
             print("Please select the following course of action.")
 
-
 while True:
     try:
         main()
     except KeyError:
         print("Book currently not available. Please try again!")
+    except ValueError:
+        print("The quantity specified was wrong.")
+            
