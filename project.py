@@ -38,7 +38,7 @@ def main():
             for key in e:
                 print(f"The book '{key}' by {e[key]} is now added to the library.")
         elif x == "change":
-            print("Please enter 'A' for Author, 'D' for Date, and 'N' for number of books.")
+            print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, and 'N' for number of books.")
             q = str(input("What would you like to change? "))
             if q == "B":
                 c = str(input("Please specify the name of the book you want to change the title: "))
