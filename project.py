@@ -79,7 +79,7 @@ def main():
                 d3[e] -= 1
                 print(f"The book '{e}' is borrowed at this library on {Datenow}.")
             else:
-                print(f"No more remaining {e} available.")
+                print(f"No more remaining '{e}' books available.")
         elif x == "return":
             e = str(input("Please specify the book you want to return: "))
             d3[e] = d3[e]
