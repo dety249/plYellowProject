@@ -4,7 +4,7 @@ d1 = {"red": "taylor swift", "attack on tale": "francis", "the life of ty": "bos
 d2 = {"red": "June 21,2001", "attack on dolomite": "November 28,2021",
       "the life of ty": "December 1,2001"}  # published date
 d3 = {"red": 1, "attack on dolomite": 13, "the life of ty": 200}  # numbers of available books
-d4 = {"red": "Shelf 1", "attack on tale": "Shelf 2", "the life of ty": "Shelf 3"}
+d4 = {"red": "Horror", "attack on tale": "Anime", "the life of ty": "Bibliography"}
 
 print("\nWelcome To Library")
 print("How can we help you? \n")
@@ -21,7 +21,7 @@ def main():
             # input for the key
             i = str(input("Please specify the book title: "))
             # display output
-            print(f"The book '{i}' by {d1[i]} is published in {d2[i]}, located at {d4[i]}, this book still has {d3[i]} "
+            print(f"The book '{i}' by {d1[i]} is published in {d2[i]}, located at {d4[i]} section, this book still has {d3[i]} "
                   f"available in the library.")
         elif x == "add":
             print("Add new Book. Please specify the necessary information on the input to be followed: ")
@@ -81,9 +81,9 @@ def main():
                 # to check if input is in dictionary
                 d4[c] = d4[c]
                 # input the location directly into the dictionary.
-                loc = str(input("Please specify the location of the book (e.g. Shelf 12): "))
+                loc = str(input("Please specify the location of the book (e.g. Horror): "))
                 d4[c] = loc
-                print(f"The book '{c}' is now located at {loc}.")
+                print(f"The book '{c}' is now located at {loc} section.")
             else:
                 print("Book not found. Please try again!")
         elif x == "borrow":
