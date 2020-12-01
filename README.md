@@ -40,6 +40,32 @@
   
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  [Trello Board](https://trello.com/b/AYQO1KUk/plyellow/ "Trello Board")
  
  ### IPO Chart: ###
