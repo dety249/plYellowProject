@@ -39,7 +39,16 @@ def main():
         elif x == "change":
             print("A for Author,D for Date,N for number of books")
             q = str(input("what would you like to change? "))
-            if q == "A":
+            if q == "B":
+                c = str(input("Input the Book you want to change the title: "))
+                # to check if input is in dictionary
+                d1[c] = d1[c]
+                d = str(input("Input the new title of the book: "))
+                d1[d] = d1.pop(c)
+                d2[d] = d2.pop(c)
+                d3[d] = d3.pop(c)
+                print(f"{c} has been change to {d}")
+            elif q == "A":
                 c = str(input("Input the Book you want to change the author: "))
                 # to check if input is in dictionary
                 d1[c] = d1[c]
