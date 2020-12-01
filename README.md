@@ -29,10 +29,16 @@
   
   
   
-  Left aligned Header | Right aligned Header | Center aligned Header
+INPUT | PROCESS | OUTPUT
 | :--- | ---: | :---:
-Content Cell  | Content Cell | Content Cell
-Content Cell  | Content Cell | Content Cell
+Book Title  | Read_Book_Details | Book_Details (Add Book,Availability,
+Check_Borrowing_Date  | Print Book Details | Bookshelf Details,Copies Available)
+  Search_Existing_Book  | Locate_Book_in Bookshelf | Delete Book
+Return Book  | Read_Book_Borrowing Date | Book Borrowing Date 
+Locate Book  |Print Library Function  | Return Book
+  Delete_Existing_Book  | Read_Book_Return |
+ | Read_Book_Delete |
+
   
   
   
