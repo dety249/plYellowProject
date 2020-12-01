@@ -2,9 +2,12 @@
 ## The project is to create a Library System using Python Programming Language. ##
 
 ### Contributors: ###
-  * Philip Ponciano
-  * Elwin Serrano
+### Team Leader: ###
   * Francis Tale
+### Team  Rapporteur: ###
+  * Philip Ponciano
+### Members: ### 
+  * Elwin Serrano
   * Dominic Edward Ty
   
 ### Features: ###
