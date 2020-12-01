@@ -4,6 +4,7 @@ d1 = {"red": "taylor swift", "attack on tale": "francis", "the life of ty": "bos
 d2 = {"red": "June 21,2001", "attack on dolomite": "November 28,2021",
       "the life of ty": "December 1,2001"}  # published date
 d3 = {"red": 1, "attack on dolomite": 13, "the life of ty": 200}  # numbers of available books
+d4 = {"red": "Shelf 1", "attack on tale": "Shelf 2", "the life of ty": "Shelf 3"}
 
 print("\nWelcome To Library")
 print("How can we help you? \n")
@@ -20,25 +21,29 @@ def main():
             # input for the key
             i = str(input("Please specify the book title: "))
             # display output
-            print(f"The book '{i}' by {d1[i]} is published in {d2[i]}, this book still has {d3[i]} available in the "
-                  f"library.")
+            print(f"The book '{i}' by {d1[i]} is published in {d2[i]}, located at {d4[i]}, this book still has {d3[i]} "
+                  f"available in the library.")
         elif x == "add":
             print("Add new Book. Please specify the necessary information on the input to be followed: ")
             a = str(input("Book title: "))
             b = str(input("Book author: "))
             c = str(input("Published date(M/D/Y): "))
+            loc = str(input("In what shelf should the book be stored?: "))
             d = int(input("How many books will be available?: "))
             e = {a: b}
             f = {a: c}
             g = {a: d}
+            h = {a: loc}
             # add into dictionary
             d1.update(e)
             d2.update(f)
             d3.update(g)
+            d4.update(h)
             for key in e:
                 print(f"The book '{key}' by {e[key]} is now added to the library.")
         elif x == "change":
-            print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, and 'N' for number of books.")
+            print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, 'S' for specifying the location, "
+                  "and 'N' for number of books.")
             q = str(input("What would you like to change? "))
             if q == "B":
                 c = str(input("Please specify the name of the book you want to change the title: "))
@@ -48,6 +53,7 @@ def main():
                 d1[d] = d1.pop(c)
                 d2[d] = d2.pop(c)
                 d3[d] = d3.pop(c)
+                d4[d] = d4.pop(c)
                 print(f"The name of the book '{c}' has been changed to '{d}'.")
             elif q == "A":
                 c = str(input("Please specify the Book you want to change the author: "))
@@ -70,6 +76,14 @@ def main():
                 # change the value of the specific key
                 d3[c] = int(input("Number of books: "))
                 print("The book '{}' now has {} books available.".format(c, d3[c]))
+            elif q == "S":
+                c = str(input("Please specify the book you want to change: "))
+                # to check if input is in dictionary
+                d4[c] = d4[c]
+                # input the location directly into the dictionary.
+                loc = str(input("Please specify the location of the book (e.g. Shelf 12): "))
+                d4[c] = loc
+                print(f"The book '{c}' is now located at {loc}.")
             else:
                 print("Book not found. Please try again!")
         elif x == "borrow":
