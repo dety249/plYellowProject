@@ -19,7 +19,7 @@
   
   plYellowProject IPO
          INPUT           |           PROCESS           |                    OUTPUT                 |
-  -----------------------|-----------------------------|-------------------------------------------|
+  | :--- | ---: | :---:
        Book Title        |      Read_Book_Details      |     Book_Details (Add Book,Availability,  |  
    Check_Borrowing_Date  |      Print Book Details     |    Bookshelf Details,Copies Available)    |
    Search_Existing_Book  |   Locate_Book_in Bookshelf  |               Delete Book                 |
