@@ -1,0 +1,9 @@
+Discussion: Proj. Code Improvisation
+
+Problems Ecountered: One of the problems we've encountered as a team is that whether to commit
+or omit additional commands that may improve the code or make the code complicated.  Second is the 
+improvisation  and beautification of the  intial code uploaded. 
+
+Solution: As a group we chose to omit additional commands that will make the code complicated
+and difficult for us to work on. And we also chose to conform with each other, the opinions we've
+shared through chat leaded us to a better understanding of the strucutre of our very own work(code)
