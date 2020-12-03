@@ -17,6 +17,7 @@
   * Record and Checking of Borrowing Time
   * Record and Checking of Return Time
   
+  
  # plYellowProject IPO
 INPUT | PROCESS | OUTPUT
 | :--- | ---: | :---:
@@ -31,6 +32,4 @@ Locate Book  |Print Library Function  | Return Book
 
 
  [Trello Board](https://trello.com/b/AYQO1KUk/plyellow/ "Trello Board")
- 
- ### IPO Chart: ###
- ![picture alt](https://github.com/Fraxinus001/plYellowProject/blob/main/IPO%20chart.png "IPO Chart")
+
