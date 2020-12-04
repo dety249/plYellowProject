@@ -1,9 +1,9 @@
 import datetime
 
-d1 = {"red": "taylor swift", "attack on tale": "francis", "the life of ty": "boss philip"}  # author
-d2 = {"red": "June 21,2001", "attack on tale": "November 28,2021", "the life of ty": "December 1,2001"}  # published date
-d3 = {"red": 1, "attack on tale": 13, "the life of ty": 200}  # numbers of available books
-d4 = {"red": "Horror", "attack on tale": "Anime", "the life of ty": "Bibliography"}
+d1 = {"Red": "Taylor Swift", "Attack on Tale": "Francis", "The Life of Ty": "Boss Philip"}  # author
+d2 = {"Red": "June 21,2001", "Attack on Tale": "November 28,2021", "The Life of Ty": "December 1,2001"}  # published date
+d3 = {"Red": 1, "Attack on Tale": 13, "The Life of Ty": 200}  # numbers of available books
+d4 = {"Red": "Horror", "Attack on Tale": "Anime", "The Life of Ty": "Bibliography"}
 
 print("\n\033[1mWelcome To Library\033[0m")
 print("How can we help you? \n")
@@ -26,8 +26,8 @@ def main():
                 # input for the key
                 i = str(input("Please specify the book title: "))
                 # display output
-                print(  f"\033[1mBook Title:\033[0m '{i}' \n"
-                        f"\033[1mBook Author:\033[0m {d1[i]} \n"
+                print(  f"\033[1mBook Title:\033[0m ֎{i}֎ \n"
+                        f"\033[1mBook Author:\033[0m © {d1[i]} \n"
                         f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
                         f"\033[1mBook Location:\033[0m {d4[i]} section \n"
                         f"\033[1mBook Cop(y/ies) remaining:\033[0m {d3[i]} \n")
