@@ -27,9 +27,6 @@ def main():
                 # input for the key
                 i = str(input("Please specify the book title: "))
                 # display output
-                print(
-                    f"The book '{i}' by {d1[i]} is published in {d2[i]}, \nlocated at {d4[i]} section, this book still has {d3[i]} "
-                    f"cop(y/ies) \navailable in the library. \n")
                 print(  f"\033[1mBook Title:\033[0m '{i}' \n"
                         f"\033[1mBook Author:\033[0m {d1[i]} \n"
                         f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
