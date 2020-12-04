@@ -1,9 +1,8 @@
 import datetime
 
 d1 = {"red": "taylor swift", "attack on tale": "francis", "the life of ty": "boss philip"}  # author
-d2 = {"red": "June 21,2001", "attack on dolomite": "November 28,2021",
-      "the life of ty": "December 1,2001"}  # published date
-d3 = {"red": 1, "attack on dolomite": 13, "the life of ty": 200}  # numbers of available books
+d2 = {"red": "June 21,2001", "attack on tale": "November 28,2021", "the life of ty": "December 1,2001"}  # published date
+d3 = {"red": 1, "attack on tale": 13, "the life of ty": 200}  # numbers of available books
 d4 = {"red": "Horror", "attack on tale": "Anime", "the life of ty": "Bibliography"}
 
 print("\n\033[1mWelcome To Library\033[0m")
