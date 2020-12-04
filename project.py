@@ -6,7 +6,7 @@ d2 = {"red": "June 21,2001", "attack on dolomite": "November 28,2021",
 d3 = {"red": 1, "attack on dolomite": 13, "the life of ty": 200}  # numbers of available books
 d4 = {"red": "Horror", "attack on tale": "Anime", "the life of ty": "Bibliography"}
 
-print("\nWelcome To Library")
+print("\n\033[1mWelcome To Library\033[0m")
 print("How can we help you? \n")
 print("Please choose from the following commands below: ")
 print("֎ Display Book details(display), \n֎ Add New Book(add), \n֎ Change Book details(change)")
@@ -30,13 +30,18 @@ def main():
                 print(
                     f"The book '{i}' by {d1[i]} is published in {d2[i]}, \nlocated at {d4[i]} section, this book still has {d3[i]} "
                     f"cop(y/ies) \navailable in the library. \n")
+                print(  f"\033[1mBook Title:\033[0m '{i}' \n"
+                        f"\033[1mBook Author:\033[0m {d1[i]} \n"
+                        f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
+                        f"\033[1mBook Location:\033[0m {d4[i]} \n"
+                        f"\033[1mBook Cop(y/ies) remaining:\033[0m {d3[i]} \n")
         elif x == "add":
             q = repetition()
             for w in range(0, q):
                 print("Add new Book. Please specify the necessary information on the queries to follow: ")
                 a = str(input("Book title: "))
                 b = str(input("Book author: "))
-                c = str(input("Published date(M/D/Y): "))
+                c = str(input("Published date(MM/DD/YYYY): "))
                 loc = str(input("In what shelf should the book be stored?: "))
                 d = int(input("How many cop(y/ies) of this book will be available?: "))
                 e = {a: b}
@@ -141,4 +146,3 @@ while True:
         print("Book currently not available. Please try again!")
     except ValueError:
         print("Wrong input. Please check your inputs and retry.")
-            
