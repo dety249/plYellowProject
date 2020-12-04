@@ -30,7 +30,7 @@ def main():
                 print(  f"\033[1mBook Title:\033[0m '{i}' \n"
                         f"\033[1mBook Author:\033[0m {d1[i]} \n"
                         f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
-                        f"\033[1mBook Location:\033[0m {d4[i]} \n"
+                        f"\033[1mBook Location:\033[0m {d4[i]} section \n"
                         f"\033[1mBook Cop(y/ies) remaining:\033[0m {d3[i]} \n")
         elif x == "add":
             q = repetition()
