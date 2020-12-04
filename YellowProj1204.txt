@@ -1,0 +1,8 @@
+Discussion: Proj. Code Beautification
+
+Problems Ecountered: One of the problems we've encountered as a team is that how can we improve the
+readability of the code for it to be user friendly and what are the commands and  statements we are going to omit 
+to achieve our goal to make the code more pleasing to the user
+
+Solution: We modified some actions and commands that are previously  done to make the code more pleaasing to the user.
+also we added some new commands in dealing with the repetition of action to be done.
