@@ -131,7 +131,7 @@ def main():
             # close the program
             exit()
         else:
-            print("Please select the following course of action.")
+            print("Please select from course of actions above.")
 
 
 while True:
@@ -140,5 +140,5 @@ while True:
     except KeyError:
         print("Book currently not available. Please try again!")
     except ValueError:
-        print("Wrong input pls. try again")
+        print("Wrong input. Please check your inputs and retry.")
             
