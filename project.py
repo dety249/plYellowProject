@@ -1,39 +1,51 @@
 import datetime
 
-d1 = {"Red": "Taylor Swift", "Attack on Tale": "Francis", "The Life of Ty": "Boss Philip"}  # author
-d2 = {"Red": "June 21,2001", "Attack on Tale": "November 28,2021", "The Life of Ty": "December 1,2001"}  # published date
-d3 = {"Red": 1, "Attack on Tale": 13, "The Life of Ty": 200}  # numbers of available books
-d4 = {"Red": "Horror", "Attack on Tale": "Anime", "The Life of Ty": "Bibliography"}
+d1 = {"Yakusoku no Neverland": "Kaiu Shirai", "The Little Prince": "Antoine de Saint-Exupéry", "Naruto":
+      "Masashi Kishimoto", "KonoSuba": "Natsume Akatsuki", "Avengers": "Stan Lee", "Harry Potter":
+      "J.K. Rowling", "Carrie": "Stephen King", "Gone with the Wind": "Margaret Mitchell",
+      "Noli Me Tangere": "Dr. Jose Rizal", "El Filibusterismo": "Dr.Jose Rizal"}  # Author
+d2 = {"Yakusoku no Neverland": "August 1, 2016", "The Little Prince": "April 6, 1943", "Naruto": "September 21, 1999",
+      "KonoSuba": "September 9, 2014", "Avengers": "September 1963", "Harry Potter":
+      "June 26, 1997 - July 21, 2007", "Carrie": "April 5,1974", "Gone with the Wind": "June 30, 1936",
+      "Noli Me Tangere": "1887", "El Filibusterismo": "1891"}  # Published Date
+d3 = {"Yakusoku no Neverland": 1, "The Little Prince": 10, "Naruto": 7, "KonoSuba": 1, "Avengers": 3,
+      "Harry Potter": 7, "Carrie": 2, "Gone with the Wind": 3, "Noli Me Tangere": 6,
+      "El Filibusterismo": 6}  # Numbers of Available Books
+d4 = {"Yakusoku no Neverland": "Anime", "The Little Prince": "Children's Book", "Naruto": "Anime",
+      "KonoSuba": "Anime", "Avengers": "Comics", "Harry Potter": "Fantasy Fiction", "Carrie":
+      "Horror Fiction", "Gone with the Wind": "Romance", "Noli Me Tangere": "Novel", "El Filibusterismo": "Novel"}
 
 print("\n\033[1mWelcome To Library\033[0m")
 print("How can we help you? \n")
 print("Please choose from the following commands below: ")
-print("֎ Display Book details(display), \n֎ Add New Book(add), \n֎ Change Book details(change)")
-print("֎ Borrow Book(borrow), \n֎ Return Book(return), \n֎ Delete a Book(delete) ")
-print("or Exit program(quit) \n")
+print("֎ DISPLAY Book details(display), \n֎ ADD New Book(add), \n֎ CHANGE Book details(change)")
+print("֎ BORROW Book(borrow), \n֎ RETURN Book(return), \n֎ DELETE a Book(delete) ")
+print("or EXIT program(quit) \n")
 
 Datenow = datetime.date.today().strftime("%B-%d-%Y")
 
+
 def repetition():
     return int(input("Please specify how many repetitions for this action: "))
+
 
 def main():
     while True:
         x = str(input("Please input the course of action to do: "))
         if x == "display":
             q = int(input("how many: "))
-            for w in range(0, q):
+            for _ in range(0, q):
                 # input for the key
                 i = str(input("Please specify the book title: "))
                 # display output
-                print(  f"\033[1mBook Title:\033[0m ֎{i}֎ \n"
-                        f"\033[1mBook Author:\033[0m © {d1[i]} \n"
-                        f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
-                        f"\033[1mBook Location:\033[0m {d4[i]} section \n"
-                        f"\033[1mBook Cop(y/ies) remaining:\033[0m {d3[i]} \n")
+                print(f"\033[1mBook Title:\033[0m ֎{i}֎ \n"
+                      f"\033[1mBook Author:\033[0m © {d1[i]} \n"
+                      f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
+                      f"\033[1mBook Location:\033[0m {d4[i]} Section \n"
+                      f"\033[1mBook Cop(y/ies) Remaining:\033[0m {d3[i]} \n")
         elif x == "add":
             q = repetition()
-            for w in range(0, q):
+            for _ in range(0, q):
                 print("Add new Book. Please specify the necessary information on the queries to follow: ")
                 a = str(input("Book title: "))
                 b = str(input("Book author: "))
@@ -55,7 +67,7 @@ def main():
             q = repetition()
             print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, "
                   "\n'S' for specifying the location, and 'N' for number of books.\n")
-            for w in range(0, q):
+            for _ in range(0, q):
                 q = str(input("What would you like to change? "))
                 if q == "B":
                     c = str(input("Please specify the name of the book you want to change the title: "))
@@ -100,7 +112,7 @@ def main():
                     print("Book not found. Please try again!")
         elif x == "borrow":
             q = repetition()
-            for w in range(0, q):
+            for _ in range(0, q):
                 e = str(input("Input the book you want to borrow: "))
                 d3[e] = d3[e]
                 if d3[e] > 0:
@@ -110,7 +122,7 @@ def main():
                     print(f"No more remaining cop(y/ies) for '{e}' book available.")
         elif x == "return":
             q = repetition()
-            for w in range(0, q):
+            for _ in range(0, q):
                 e = str(input("Please specify the book you want to return: "))
                 d3[e] = d3[e]
                 d3[e] += 1
@@ -118,7 +130,7 @@ def main():
         elif x == "delete":
             print("Delete a book")
             q = repetition()
-            for w in range(0, q):
+            for _ in range(0, q):
                 d = str(input("Input the book you want to delete: "))
                 # to check if input is in dictionary
                 d1[d] = d1[d]
