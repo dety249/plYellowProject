@@ -1,39 +1,60 @@
+# P.D.C.Ponciano, E.Serrano, D.E.G.Ty, F.S.Tale BES241
+# plYellowProject December 3, 2020
+
 import datetime
-
-d1 = {"Yakusoku no Neverland": "Kaiu Shirai", "The Little Prince": "Antoine de Saint-Exupéry", "Naruto":
-      "Masashi Kishimoto", "KonoSuba": "Natsume Akatsuki", "Avengers": "Stan Lee", "Harry Potter":
-      "J.K. Rowling", "Carrie": "Stephen King", "Gone with the Wind": "Margaret Mitchell",
-      "Noli Me Tangere": "Dr. Jose Rizal", "El Filibusterismo": "Dr.Jose Rizal"}  # Author
-d2 = {"Yakusoku no Neverland": "August 1, 2016", "The Little Prince": "April 6, 1943", "Naruto": "September 21, 1999",
-      "KonoSuba": "September 9, 2014", "Avengers": "September 1963", "Harry Potter":
-      "June 26, 1997 - July 21, 2007", "Carrie": "April 5,1974", "Gone with the Wind": "June 30, 1936",
-      "Noli Me Tangere": "1887", "El Filibusterismo": "1891"}  # Published Date
-d3 = {"Yakusoku no Neverland": 1, "The Little Prince": 10, "Naruto": 7, "KonoSuba": 1, "Avengers": 3,
-      "Harry Potter": 7, "Carrie": 2, "Gone with the Wind": 3, "Noli Me Tangere": 6,
-      "El Filibusterismo": 6}  # Numbers of Available Books
-d4 = {"Yakusoku no Neverland": "Anime", "The Little Prince": "Children's Book", "Naruto": "Anime",
-      "KonoSuba": "Anime", "Avengers": "Comics", "Harry Potter": "Fantasy Fiction", "Carrie":
-      "Horror Fiction", "Gone with the Wind": "Romance", "Noli Me Tangere": "Novel", "El Filibusterismo": "Novel"}
-
-print("\n\033[1mWelcome To Library\033[0m")
-print("How can we help you? \n")
-print("Please choose from the following commands below: ")
-print("֎ DISPLAY Book details(display), \n֎ ADD New Book(add), \n֎ CHANGE Book details(change)")
-print("֎ BORROW Book(borrow), \n֎ RETURN Book(return), \n֎ DELETE a Book(delete) ")
-print("or EXIT program(quit) \n")
-
-Datenow = datetime.date.today().strftime("%B-%d-%Y")
+import pickle
 
 
-def repetition():
-    return int(input("Please specify how many repetitions for this action: "))
+#  Starting point for the Core of the Program:
+
+
+def readmode(data):
+    return open(data, "rb")
+
+
+def writemode(data):
+    return open(data, "wb")
 
 
 def main():
     while True:
+
+        #  Preload the databanks (read-only mode):
+        dat1 = readmode("bookXauthor.dat")
+        dat2 = readmode("bookXpbdate.dat")
+        dat3 = readmode("bookXavail.dat")
+        dat4 = readmode("bookXcustloc.dat")
+        #  Declare individual databanks as variable:
+        d1 = pickle.load(dat1)  # Author
+        d2 = pickle.load(dat2)  # Published Date
+        d3 = pickle.load(dat3)  # Numbers of Available Books
+        d4 = pickle.load(dat4)  # Location
+        #  Banner:
+        print("\n\033[1mWelcome To Library\033[0m")
+        print("How can we help you? \n")
+        print("Please choose from the following commands below: ")
+        print("֎ DISPLAY Book details(display), \n֎ ADD New Book(add), \n֎ CHANGE Book details(change)")
+        print("֎ BORROW Book(borrow), \n֎ RETURN Book(return), \n֎ DELETE a Book(delete) ")
+        print("or EXIT program(quit) \n")
+        #  Initialize date acquisition script:
+        Datenow = datetime.date.today().strftime("%B-%d-%Y")
+
+        #  Definition for closing all currently-accessed databanks:
+        def closedatabank():
+            dat1.close()
+            dat2.close()
+            dat3.close()
+            dat4.close()
+
+        def repetition():
+            return int(input("Please specify how many repetitions for this action: "))
+
+        #  Core Program ends here!
+
+        #  Starting point for the framework:
         x = str(input("Please input the course of action to do: "))
         if x == "display":
-            q = int(input("how many: "))
+            q = repetition()
             for _ in range(0, q):
                 # input for the key
                 i = str(input("Please specify the book title: "))
@@ -43,6 +64,7 @@ def main():
                       f"\033[1mBook Publishing Date:\033[0m {d2[i]} \n"
                       f"\033[1mBook Location:\033[0m {d4[i]} Section \n"
                       f"\033[1mBook Cop(y/ies) Remaining:\033[0m {d3[i]} \n")
+                input("Press any key to continue.")
         elif x == "add":
             q = repetition()
             for _ in range(0, q):
@@ -61,8 +83,19 @@ def main():
                 d2.update(f)
                 d3.update(g)
                 d4.update(h)
+                #  Store data to databank file:
+                dat1 = writemode("bookXauthor.dat")
+                dat2 = writemode("bookXpbdate.dat")
+                dat3 = writemode("bookXavail.dat")
+                dat4 = writemode("bookXcustloc.dat")
+                pickle.dump(d1, dat1)  # Author
+                pickle.dump(d2, dat2)  # Published Date
+                pickle.dump(d3, dat3)  # Numbers of Available Books
+                pickle.dump(d4, dat4)  # Location
                 for key in e:
                     print(f"The book '{key}' by {e[key]} is now added to the library.")
+                    closedatabank()
+                    input("Press any key to continue.")
         elif x == "change":
             q = repetition()
             print("Please enter 'B' for Book Title, 'A' for Author, 'D' for Date, "
@@ -78,28 +111,58 @@ def main():
                     d2[d] = d2.pop(c)
                     d3[d] = d3.pop(c)
                     d4[d] = d4.pop(c)
+
+                    #  Store data to databank file:
+                    dat1 = writemode("bookXauthor.dat")
+                    dat2 = writemode("bookXpbdate.dat")
+                    dat3 = writemode("bookXavail.dat")
+                    dat4 = writemode("bookXcustloc.dat")
+                    pickle.dump(d1, dat1)  # Author
+                    pickle.dump(d2, dat2)  # Published Date
+                    pickle.dump(d3, dat3)  # Numbers of Available Books
+                    pickle.dump(d4, dat4)  # Location
                     print(f"The name of the book '{c}' has been changed to '{d}'.")
+                    closedatabank()
+                    input("Press any key to continue.")
                 elif q == "A":
                     c = str(input("Please specify the Book you want to change the author: "))
                     # to check if input is in dictionary
                     d1[c] = d1[c]
                     # change the value of the specific key
                     d1[c] = str(input("Book author: "))
+
+                    #  Store data to databank file:
+                    dat1 = writemode("bookXauthor.dat")
+                    pickle.dump(d1, dat1)  # Author
                     print("{} author is {}".format(c, d1[c]))
+                    closedatabank()
+                    input("Press any key to continue.")
                 elif q == "D":
                     c = str(input("Please specify the Book you want to change the date: "))
                     # to check if input is in dictionary
                     d2[c] = d2[c]
                     # change the value of the specific key
                     d2[c] = str(input("New time: "))
+
+                    #  Store data to databank file:
+                    dat2 = writemode("bookXpbdate.dat")
+                    pickle.dump(d2, dat2)  # Published Date
                     print("The book '{}' publishing date is changed to {}.".format(c, d2[c]))
+                    closedatabank()
+                    input("Press any key to continue.")
                 elif q == "N":
                     c = str(input("Please specify the Book you want to change the quantity of available books: "))
                     # to check if input is in dictionary
                     d3[c] = d3[c]
                     # change the value of the specific key
                     d3[c] = int(input("Number of books: "))
+
+                    #  Store data to databank file:
+                    dat3 = writemode("bookXavail.dat")
+                    pickle.dump(d3, dat3)  # Numbers of Available Books
                     print("The book '{}' now has {} available cop(y/ies) in the library.".format(c, d3[c]))
+                    closedatabank()
+                    input("Press any key to continue.")
                 elif q == "S":
                     c = str(input("Please specify the book you want to change: "))
                     # to check if input is in dictionary
@@ -107,26 +170,46 @@ def main():
                     # input the location directly into the dictionary.
                     loc = str(input("Please specify the location of the book (e.g. Horror): "))
                     d4[c] = loc
+
+                    #  Store data to databank file:
+                    dat4 = writemode("bookXcustloc.dat")
+                    pickle.dump(d4, dat4)  # Location
                     print(f"The book '{c}' is now located at {loc} section.")
+                    closedatabank()
+                    input("Press any key to continue.")
                 else:
                     print("Book not found. Please try again!")
+                    input("Press any key to continue.")
         elif x == "borrow":
             q = repetition()
             for _ in range(0, q):
-                e = str(input("Input the book you want to borrow: "))
+                e = str(input("Please input the book you want to borrow: "))
                 d3[e] = d3[e]
                 if d3[e] > 0:
                     d3[e] -= 1
+
+                    #  Store data to databank file:
+                    dat3 = writemode("bookXavail.dat")
+                    pickle.dump(d3, dat3)  # Numbers of Available Books
                     print(f"The book '{e}' is borrowed at this library on {Datenow}.")
+                    closedatabank()
+                    input("Press any key to continue.")
                 else:
                     print(f"No more remaining cop(y/ies) for '{e}' book available.")
+                    input("Press any key to continue.")
         elif x == "return":
             q = repetition()
             for _ in range(0, q):
                 e = str(input("Please specify the book you want to return: "))
                 d3[e] = d3[e]
                 d3[e] += 1
+
+                #  Store data to databank file:
+                dat3 = writemode("bookXavail.dat")
+                pickle.dump(d3, dat3)  # Numbers of Available Books
                 print(f"The book '{e}' has just been returned to this library on {Datenow}.")
+                closedatabank()
+                input("Press any key to continue.")
         elif x == "delete":
             print("Delete a book")
             q = repetition()
@@ -138,10 +221,24 @@ def main():
                 d1.pop(d)
                 d2.pop(d)
                 d3.pop(d)
+                d4.pop(d)
+
+                #  Store data to databank file:
+                dat1 = writemode("bookXauthor.dat")
+                dat2 = writemode("bookXpbdate.dat")
+                dat3 = writemode("bookXavail.dat")
+                dat4 = writemode("bookXcustloc.dat")
+                pickle.dump(d1, dat1)  # Author
+                pickle.dump(d2, dat2)  # Published Date
+                pickle.dump(d3, dat3)  # Numbers of Available Books
+                pickle.dump(d4, dat4)  # Location
                 print("The book '{}' is deleted from the library.".format(d))
+                closedatabank()
+                input("Press any key to continue.")
         elif x == "quit":
             print("Thank You!")
             # close the program
+            closedatabank()
             exit()
         else:
             print("Please select from course of actions above.")
@@ -151,6 +248,11 @@ while True:
     try:
         main()
     except KeyError:
-        print("Book currently not available. Please try again!")
+        print("Book currently not available. Please check if there are spelling mistakes, "
+              "\nor you might need to add this book to the system.")
+        input("Press any key to continue.")
     except ValueError:
         print("Wrong input. Please check your inputs and retry.")
+        input("Press any key to continue.")
+      
+#  Framework of the Program ends here!
