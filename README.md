@@ -1,5 +1,6 @@
 # plYellowProject
 ## The project is to create a Library System using Python Programming Language. ##
+[Project Documentation](https://docs.google.com/document/d/1FsQvHVZmjP_6qb4n9rJ_iVk1nJhRS8yI4poXn7bghkw/edit#heading=h.42rde8xze3ow "Project Documentation")
 
 ### Contributors: ###
 ### Team Leader: ###
