@@ -1,4 +1,4 @@
-# P.D.C.Ponciano, E.Serrano, D.E.G.Ty, F.S.Tale BES241
+# P.D.C.Ponciano, E.M.M.Serrano, D.E.G.Ty, F.S.Tale BES241
 # plYellowProject December 3, 2020
 
 import datetime
@@ -119,7 +119,7 @@ def main():
                     dat4 = writemode("bookXcustloc.dat")
                     pickle.dump(d1, dat1)  # Author
                     pickle.dump(d2, dat2)  # Published Date
-                    pickle.dump(d3, dat3)  # Numbers of Available Books
+                    pickle.dump(d3, dat3)  # Number of Available Books
                     pickle.dump(d4, dat4)  # Location
                     print(f"The name of the book '{c}' has been changed to '{d}'.")
                     closedatabank()
@@ -159,7 +159,7 @@ def main():
 
                     #  Store data to databank file:
                     dat3 = writemode("bookXavail.dat")
-                    pickle.dump(d3, dat3)  # Numbers of Available Books
+                    pickle.dump(d3, dat3)  # Number of Available Books
                     print("The book '{}' now has {} available cop(y/ies) in the library.".format(c, d3[c]))
                     closedatabank()
                     input("Press any key to continue.")
@@ -190,7 +190,7 @@ def main():
 
                     #  Store data to databank file:
                     dat3 = writemode("bookXavail.dat")
-                    pickle.dump(d3, dat3)  # Numbers of Available Books
+                    pickle.dump(d3, dat3)  # Number of Available Books
                     print(f"The book '{e}' is borrowed at this library on {Datenow}.")
                     closedatabank()
                     input("Press any key to continue.")
@@ -206,7 +206,7 @@ def main():
 
                 #  Store data to databank file:
                 dat3 = writemode("bookXavail.dat")
-                pickle.dump(d3, dat3)  # Numbers of Available Books
+                pickle.dump(d3, dat3)  # Number of Available Books
                 print(f"The book '{e}' has just been returned to this library on {Datenow}.")
                 closedatabank()
                 input("Press any key to continue.")
@@ -241,18 +241,18 @@ def main():
             closedatabank()
             exit()
         else:
-            print("Please select from course of actions above.")
+            print("Please select from the course of actions above.")
 
 
 while True:
     try:
         main()
     except KeyError:
-        print("Book currently not available. Please check if there are spelling mistakes, "
+        print("Book is currently not available. Please check if there are spelling mistakes, "
               "\nor you might need to add this book to the system.")
         input("Press any key to continue.")
     except ValueError:
-        print("Wrong input. Please check your inputs and retry.")
+        print("Wrong Input. Please check your inputs and retry.")
         input("Press any key to continue.")
       
 #  Framework of the Program ends here!
